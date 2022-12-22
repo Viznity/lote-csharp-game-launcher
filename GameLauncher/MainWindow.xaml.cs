@@ -59,8 +59,8 @@ namespace GameLauncher
 
             rootPath = Directory.GetCurrentDirectory();
             versionFile = Path.Combine(rootPath, "Version.txt");
-            gameZip = Path.Combine(rootPath, "Build.zip");
-            gameExe = Path.Combine(rootPath, "Build", "Pirate Game.exe");
+            gameZip = Path.Combine(rootPath, "LordOfTheElvesBuild-main.zip");
+            gameExe = Path.Combine(rootPath, "Build", "LordOfTheElvesGL.exe");
         }
 
         private void CheckForUpdates()
@@ -73,7 +73,7 @@ namespace GameLauncher
                 try
                 {
                     WebClient webClient = new WebClient();
-                    Version onlineVersion = new Version(webClient.DownloadString("https://drive.google.com/uc?export=download&id=1R3GT_VINzmNoXKtvnvuJw6C86-k3Jr5s"));
+                    Version onlineVersion = new Version(webClient.DownloadString("https://gitlab.com/viznity/LordOfTheElvesBuild/-/archive/main/LordOfTheElvesBuild-main.zip"));
 
                     if (onlineVersion.IsDifferentThan(localVersion))
                     {
@@ -108,11 +108,11 @@ namespace GameLauncher
                 else
                 {
                     Status = LauncherStatus.downloadingGame;
-                    _onlineVersion = new Version(webClient.DownloadString("https://drive.google.com/uc?export=download&id=1R3GT_VINzmNoXKtvnvuJw6C86-k3Jr5s"));
+                    _onlineVersion = new Version(webClient.DownloadString("https://gitlab.com/viznity/LordOfTheElvesBuild/-/archive/main/LordOfTheElvesBuild-main.zip"));
                 }
 
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadGameCompletedCallback);
-                webClient.DownloadFileAsync(new Uri("https://drive.google.com/uc?export=download&id=1SNA_3P5wVp4tZi5NKhiGAAD6q4ilbaaf"), gameZip, _onlineVersion);
+                webClient.DownloadFileAsync(new Uri("https://gitlab.com/viznity/LordOfTheElvesBuild/-/raw/main/Version.txt?inline=false"), gameZip, _onlineVersion);
             }
             catch (Exception ex)
             {
