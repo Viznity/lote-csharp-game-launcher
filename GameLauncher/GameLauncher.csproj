@@ -4,17 +4,17 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>images\Icon.ico</ApplicationIcon>
+    <ApplicationIcon>images\Icon-LOTE.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\Icon.ico" />
-    <None Remove="images\LauncherBackground.png" />
+    <None Remove="images\Icon-LOTE.ico" />
+    <None Remove="images\LauncherBackground-LOTE.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\Icon.ico" />
-    <Resource Include="images\LauncherBackground.png" />
+    <Resource Include="images\Icon-LOTE.ico" />
+    <Resource Include="images\LauncherBackground-LOTE.png" />
   </ItemGroup>
 
 </Project>
